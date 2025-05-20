@@ -1,5 +1,4 @@
 import express from "express";
-import auth from "../../middlwares/Auth";
 import { projectController } from "./project.controller";
 
 const router = express.Router();

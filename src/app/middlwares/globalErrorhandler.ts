@@ -1,14 +1,14 @@
 // import { NextFunction, Request, Response } from "express";
 
-import { ErrorRequestHandler, NextFunction, Request, Response } from "express";
-import { ZodError, ZodIssue } from "zod";
+import { ErrorRequestHandler, Request} from "express";
+import { ZodError } from "zod";
 import config from "../config";
 import handleZodError from "../errors/handleZodError";
 import { TErrorSources } from "../interface/error";
 import handleValidationError from "../errors/handleValidationError";
 import handleCastError from "../errors/handleCastError";
 
-const globalErrorHandler: ErrorRequestHandler =  (err, req, res, next)=>{
+const globalErrorHandler: ErrorRequestHandler =  (err, req:Request, res)=>{
   let statusCode = err.statusCode || 500 ;
   let message= err.message || "something went wrong";
 

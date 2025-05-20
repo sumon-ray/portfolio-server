@@ -1,5 +1,4 @@
 import express from "express";
-import auth from "../../middlwares/Auth";
 import { skillController } from "./skill.controller";
 
 const router = express.Router();
