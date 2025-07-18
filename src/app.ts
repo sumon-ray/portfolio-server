@@ -1,20 +1,19 @@
+import express, { Application, Request, Response } from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-import express, { Application, Request, Response } from "express";
 import globalErrorHandler from "./app/middlwares/globalErrorhandler";
 import router from "./app/routes";
 const app: Application = express();
 
 app.use(
   cors({
-    origin: "http://localhost:4000",
+    origin: ["https://sumon-ray.vercel.app", "https://admin-dashboard-six-gold-80.vercel.app"],
     credentials: true,
   })
 );
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-// app.use(express.urlencoded({ extended: true }));
 
 
 
